@@ -1,0 +1,276 @@
+body,
+html {
+	background-color: #EBECF0;
+}
+
+body,
+p,
+input,
+select,
+textarea,
+.Button {
+	font-family: "Montserrat", sans-serif;
+	letter-spacing: -0.2px;
+	font-size: 16px;
+}
+
+div,
+p {
+	color: #BABECC;
+	text-shadow: 1px 1px 1px #FFF;
+}
+
+form {
+	padding: 16px;
+	width: 320px;
+	margin: 0 auto;
+}
+
+.segment {
+	padding: 32px 0;
+	text-align: center;
+}
+
+.Button,
+input {
+	border: 0;
+	outline: 0;
+	font-size: 16px;
+	border-radius: 320px;
+	padding: 16px;
+	background-color: #EBECF0;
+	text-shadow: 1px 1px 0 #FFF;
+}
+
+label {
+	display: block;
+	margin-bottom: 24px;
+	width: 100%;
+}
+
+input {
+	font-weight: bold;
+	color: #004974;
+	margin-right: 8px;
+	box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+	width: 100%;
+	box-sizing: border-box;
+	transition: all 0.2s ease-in-out;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+input:focus {
+	box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+input:disabled {
+	color: #b7bcc8;
+	background-color: #d2dce8;
+	box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+input::placeholder{
+	color: #b7bcc8;
+}
+
+.Button {
+	border: 0;
+	outline: 0;
+	box-sizing: content-box;
+	padding: 0;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	text-decoration: none;
+	text-indent: 0;
+
+	color: #004974;
+	font-weight: bold;
+	box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.Button:hover {
+	box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+
+.Button:active {
+	box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.Button:disabled {
+	color: #61677C;
+	background-color: #d2dce8;
+	box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.Button input {
+	position: absolute;
+	opacity: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #e5e5e5;
+	background-color: #EBECF0;
+	position: relative;
+	overflow: hidden;
+}
+
+#setSize {
+	text-align: center;
+	position: absolute;
+}
+
+#showSize {
+	position: absolute;
+	margin-top: 120px;
+}
+
+#main {
+	
+	position: absolute;
+	margin: 20px auto;
+}
+
+#showRule {
+	border-radius: 5px;
+	box-sizing: border-box;
+	position: relative;
+	overflow: auto;
+}
+
+.Part {
+	border-radius: 5px;
+	box-sizing: border-box;
+	position: relative;
+	background-color: #EBECF0;
+	box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+}
+
+#parameterForm {
+	position: relative;
+	margin: 0;
+}
+
+.ruleList {
+	font-weight: bold;
+	box-sizing: border-box;
+	font-family: courier new;
+	font-family: consolas;
+	font-size: 1.5625rem;
+}
+
+#showTape {
+	margin: 0 auto;
+	display: inline-block;
+	border-radius: 5px;
+	box-sizing: border-box;
+	position: relative;
+	overflow-x: auto;
+	oveflow-y: auto;
+}
+
+#article {
+	border-radius: 0 0 5px 5px;
+	box-sizing: content-box;
+	position: relative;
+	height: 100%;
+	background-color: #EBECF0;
+	box-shadow: -5px 0px 20px #FFF, 5px 5px 20px #BABECC;
+}
+
+#header {
+	border-radius: 5px 5px 0 0;
+	border-bottom-width: 0;
+	position: relative;
+	text-align: center;
+	font-family: "等线";
+	font-weight: 1000;
+	font-size: 30px;
+	background-color: #EBECF0;
+	box-shadow: -5px -5px 20px #FFF, 5px 0px 20px #BABECC;
+}
+
+#showTapeTable {
+	margin: 0 auto;
+	color: #004974;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px;
+	box-shadow: -5px 0px 20px #FFF, 5px 5px 20px #BABECC;
+}
+
+.showTapeCharClass {
+	font-weight: bold;
+	border-radius: 2px;
+	box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.showTapeStateClass {
+	font-weight: bold;
+	border-radius: 2px;
+	box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+footer {
+	clear: both;
+	display: block;
+	text-align: center;
+	margin: 0px auto;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#email {
+	color: #004974;
+}
+
+#email:hover {
+	color: #66ccff;
+}
+
+.ruleList {
+	color: #004974;
+	margin: 10px auto;
+	text-align: center;
+	border-radius: 320px;
+	width: 80%;
+	box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+}
+
+#setSizeTable {
+	border-radius: 0 0 10px 0;
+	color: #004974;
+	font-weight: bold;
+	box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+	position: absolute;
+}
+
+#setSizeWidthLabel {
+	display: inline;
+}
+
+#setSizeHeightLabel {
+	display: inline;
+}
+
+[type=range] {
+	height: 10px;
+}
+
+::-webkit-scrollbar{
+	width: 5px;
+	height: 5px;
+	background-color: #EBECF0;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 100px;
+	background-color: #8aa0b3;
+}
