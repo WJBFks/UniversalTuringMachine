@@ -1,0 +1,137 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://cdn.jsdelivr.net/gh/WJBFks/UniversalTuringMachine/Sourse/js/UTM.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/WJBFks/UniversalTuringMachine/Sourse/css/style.css" />
+		<title>通用图灵机</title>
+	</head>
+	<body>
+		<div id="main">
+			<table id="mainTable" cellpadding="0" cellspacing="0">
+				<tr>
+					<td id="header" style="color: #61677C;font-weight: bold;" >通用图灵机</td>
+				</tr>
+				<tr>
+					<td id="article">
+						<table cellspacing="20px">
+							<tr>
+								<td id="parameter" class="Part">
+									<form id="parameterForm" method="get" target="test">
+										<table id="parameterTable" border="0px" cellspacing="" cellpadding="10px">
+											<tr style="text-align: center;">
+												<td class="LabelNormal" style="color: #61677C;font-weight: bold;padding: 0;">初始<br>状态</td>
+												<td><input type="text" autocomplete="off" id="startState" placeholder="初始状态" disabled="disabled" oninput="checkForm()"></td>
+											</tr>
+											<tr style="text-align: center;">
+												<td class="LabelNormal" style="color: #61677C;font-weight: bold;padding: 0;">终止<br>状态</td>
+												<td><input type="text" autocomplete="off" id="endState" placeholder="终止状态" disabled="disabled" oninput="checkForm()"></td>
+											</tr>
+											<tr style="text-align: center;">
+												<td class="LabelNormal" style="color: #61677C;font-weight: bold;padding: 0;">输入<br>纸带</td>
+												<td><input type="text" autocomplete="off" id="inputTape" placeholder="输入带" disabled="disabled" oninput="inputString()"></td>
+											</tr>
+											<tr style="text-align: center;">
+												<td class="LabelNormal" style="color: #61677C;font-weight: bold;padding: 0;">运行<br>状态</td>
+												<td><input type="text" autocomplete="off" id="runState" value="未运行" disabled="disabled" onfocus="this.blur()"></td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<button class="Button" onclick="location.reload();">
+														<label class="LabelButton">刷新页面</label><br>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<div id="chooseFile">
+														<a href="javascript:;" class="Button" style="text-align: center;">
+															<input id="chooseFileInput" type='file' accept=".txt" onchange='openFile(event)'>
+															<label class="LabelButton">选择规则</label><br>
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<button class="Button" onclick="Turing()" id="confirmButton" disabled="disabled">
+														<label class="LabelButton">重新开始</label>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<button class="Button" onclick="runOneStep()" id="runOneStepButton" disabled="disabled">
+														<label class="LabelButton">单歩运行</label>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<button class="Button" onclick="runAll()" id="runAllButton" disabled="disabled">
+														<label class="LabelButton">一键运行</label>
+													</button>
+												</td>
+											</tr>
+										</table>
+									</form>
+								</td>
+								<td class="Part">
+									<div id="showRule" style="text-align: center;">
+
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="Part" colspan="2">
+									<div id="showTape">
+										<table id="showTapeTable" border="0px">
+											<tbody id="showTapeTbody">
+												<tr id="showTapeChar">
+												</tr>
+												<tr id="showTapeState">
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<table id="setSizeTable" cellspacing="20px">
+			<tr>
+				<td>
+					宽度
+				</td>
+				<td style="text-align: center;">
+					<input id="setSizeWidth" type="range" value="600" min="600" max="10000" oninput="WindowChange()">
+				</td>
+				<td>
+					<label id="setSizeWidthLabel">宽度</label>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					高度
+				</td>
+				<td style="text-align: center;">
+					<input id="setSizeHeight" type="range" value="480" min="480" max="10000" oninput="WindowChange()">
+				</td>
+				<td>
+					<label id="setSizeHeightLabel">高度</label>
+				</td>
+			</tr>
+		</form>
+		<div id="showSize" hidden="hidden">
+			<span id="printWindowSize" onload="WindowChange()"></span><br>
+			<span id="printWindowSizeMain" onload="WindowChange()"></span>
+		</div>
+		<footer>
+			<a id="email" href="mailto:624662062@qq.com">Designed by WJBFks</a>
+		</footer>
+		<iframe name="test" style="display:none"></iframe>
+	</body>
+</html>
