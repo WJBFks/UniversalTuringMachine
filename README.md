@@ -24,12 +24,7 @@
 
 > 该文件包含三套预制规则
 >
-> 分别为：
-![0^n1^n](http://latex.codecogs.com/svg.latex?0^n1^n\)
-、
-![log_2n](http://latex.codecogs.com/svg.latex?log_2n\)
-、
-![wcw](http://latex.codecogs.com/svg.latex?wcw\)
+> 分别为：0^n1^n、log_2n、wcw
 >
 > 可以按以下格式添加自定义规则
 >
