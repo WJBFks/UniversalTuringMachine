@@ -1,117 +1,120 @@
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
-		<script src="js/jQuery/jquery-3.5.1.min.js"></script>
-		<script src="js/UTM.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<title>通用图灵机</title>
-	</head>
-	<body>
-		<div id="main">
-			<table id="mainTable" cellpadding="0" cellspacing="0">
-				<tr>
-					<td id="header" style="color: #61677C;font-weight: bold;height: 3rem;" >
-						<div style="position: absolute;bottom: 0;margin-left: 20.1875rem;">
-							通用图灵机
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td id="article">
-						<table cellspacing="20px">
-							<tr>
-								<td id="parameter" class="Part">
-									<form id="parameterForm" method="get" target="test">
-										<table id="parameterTable" border="0px" cellspacing="" cellpadding="10px">
-											<tr style="text-align: center;">
-												<td class="LabelNormal" style="width: 40px;height: 40px;">初始<br>状态</td>
-												<td>
-													<input type="text" autocomplete="off" id="startState" placeholder="初始状态" disabled="disabled" oninput="checkForm()">
-												</td>
-											</tr>
-											<tr style="text-align: center;">
-												<td class="LabelNormal" style="width: 40px;height: 40px;">终止<br>状态</td>
-												<td>
-													<input type="text" autocomplete="off" id="endState" placeholder="终止状态" disabled="disabled" oninput="checkForm()">
-												</td>
-											</tr>
-											<tr style="text-align: center;">
-												<td class="LabelNormal" style="width: 40px;height: 40px;">输入<br>纸带</td>
-												<td>
-													<input type="text" autocomplete="off" id="inputTape" placeholder="输入带" disabled="disabled" oninput="inputString()">
-												</td>
-											</tr>
-											<tr style="text-align: center;">
-												<td class="LabelNormal" style="width: 40px;height: 40px;">运行<br>状态</td>
-												<td>
-													<input type="text" autocomplete="off" id="runState" value="未运行" disabled="disabled" onfocus="this.blur()">
-												</td>
-											</tr>
-											<tr>
-												<td colspan="2">
-													<div id="chooseFile">
-														<a href="javascript:;" class="Button" style="text-align: center;">
-															<input id="chooseFileInput" type='file' accept=".txt" onchange='openFile(event)'>
-															<label class="LabelButton">选择规则</label><br>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td colspan="2">
-													<button class="Button" onclick="Turing()" id="confirmButton" disabled="disabled">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script src="js/jQuery/jquery-3.5.1.min.js"></script>
+    <script src="js/UTM.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>通用图灵机</title>
+</head>
+
+<body>
+    <div id="main">
+        <table id="mainTable" cellpadding="0" cellspacing="0">
+            <tr>
+                <td id="header" style="color: #61677C;font-weight: bold;height: 3rem;">
+                    <div style="position: absolute;bottom: 0;margin-left: 20.1875rem;">
+                        通用图灵机
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="article">
+                    <table cellspacing="20px">
+                        <tr>
+                            <td id="parameter" class="Part">
+                                <form id="parameterForm" method="get" target="test">
+                                    <table id="parameterTable" border="0px" cellspacing="" cellpadding="10px">
+                                        <tr style="text-align: center;">
+                                            <td class="LabelNormal" style="width: 40px;height: 40px;">初始<br>状态</td>
+                                            <td>
+                                                <input type="text" autocomplete="off" id="startState" placeholder="初始状态" disabled="disabled" oninput="checkForm()">
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align: center;">
+                                            <td class="LabelNormal" style="width: 40px;height: 40px;">终止<br>状态</td>
+                                            <td>
+                                                <input type="text" autocomplete="off" id="endState" placeholder="终止状态" disabled="disabled" oninput="checkForm()">
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align: center;">
+                                            <td class="LabelNormal" style="width: 40px;height: 40px;">输入<br>纸带</td>
+                                            <td>
+                                                <input type="text" autocomplete="off" id="inputTape" placeholder="输入带" disabled="disabled" oninput="inputString()">
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align: center;">
+                                            <td class="LabelNormal" style="width: 40px;height: 40px;">运行<br>状态</td>
+                                            <td>
+                                                <input type="text" autocomplete="off" id="runState" value="未运行" disabled="disabled" onfocus="this.blur()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div id="chooseFile">
+                                                    <a href="javascript:;" class="Button" style="text-align: center;">
+                                                        <input id="chooseFileInput" type='file' accept=".txt" onchange='openFile(event)'>
+                                                        <label class="LabelButton">选择规则</label><br>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <button class="Button" onclick="Turing()" id="confirmButton" disabled="disabled">
 														<label class="LabelButton">重新开始</label>
 													</button>
-												</td>
-											</tr>
-											<tr>
-												<td colspan="2">
-													<button class="Button" onclick="runOneStep()" id="runOneStepButton" disabled="disabled">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <button class="Button" onclick="runOneStep()" id="runOneStepButton" disabled="disabled">
 														<label class="LabelButton">单歩运行</label>
 													</button>
-												</td>
-											</tr>
-											<tr>
-												<td colspan="2">
-													<button class="Button" onclick="runAll()" id="runAllButton" disabled="disabled">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <button class="Button" onclick="runAll()" id="runAllButton" disabled="disabled">
 														<label class="LabelButton">一键运行</label>
 													</button>
-												</td>
-											</tr>
-										</table>
-									</form>
-								</td>
-								<td class="Part">
-									<div id="showRule" style="text-align: center;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </td>
+                            <td class="Part">
+                                <div id="showRule" style="text-align: center;">
 
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="Part" colspan="2">
-									<div id="showTape">
-										<table id="showTapeTable" border="0px">
-											<tbody id="showTapeTbody">
-												<tr id="showTapeChar">
-												</tr>
-												<tr id="showTapeState">
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<footer>
-			<a id="email" href="https://github.com/WJBFks/UniversalTuringMachine">Designed by WJBFks</a>
-		</footer>
-		<iframe name="test" style="display:none"></iframe>
-	</body>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Part" colspan="2">
+                                <div id="showTape">
+                                    <table id="showTapeTable" border="0px">
+                                        <tbody id="showTapeTbody">
+                                            <tr id="showTapeChar">
+                                            </tr>
+                                            <tr id="showTapeState">
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <a id="email" href="https://github.com/WJBFks/UniversalTuringMachine">Designed by WJBFks</a>
+    </footer>
+    <iframe name="test" style="display:none"></iframe>
+</body>
+
 </html>
