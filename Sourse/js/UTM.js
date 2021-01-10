@@ -222,27 +222,6 @@ function printTape() {
 		$("#showTapeChar" + i).removeAttr("hidden")
 		$("#showTapeState" + i).removeAttr("hidden")
 	}
-	//输入带字符类
-	$(".showTapeCharClass").css({
-		"margin": width * 0.01 + "px",
-		"width": width * 0.05 + "px",
-		"min-width": width * 0.04 + "px",
-		"height": height * 0.06 + "px",
-		"font-size": height * 0.03 + "px",
-		"padding-top": height * 0.005 + "px",
-	})
-	//输入带状态类
-	$(".showTapeStateClass").css({
-		"margin": width * 0.01 + "px",
-		"width": width * 0.05 + "px",
-		"min-width": width * 0.04 + "px",
-		"font-size": height * 0.02 + "px",
-		"height": height * 0.03 + "px",
-	})
-	//输入带table
-	$("#showTapeTable").css({
-		"margin-top": ($("#showTape").height() - $("#showTapeTable").height()) / 2 - 22 + "px"
-	})
 	$("#showTapeChar" + pre).css({
 		"box-shadow": "inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF",
 		"color": "#004974"
@@ -260,124 +239,13 @@ function printTape() {
 		"color": "#AE1100"
 	})
 	pre = now;
-	$("#showTapeTable").css({
-		"margin-top": ($("#showTape").height() - $("#showTapeTable").height()) / 2 - 7 + "px"
-	})
 }
 
 window.onresize = function() {
-	WindowChange();
 }
 
 window.onload = function() {
-	document.getElementById("setSizeWidth").value = document.documentElement.clientWidth * 0.35;
-	document.getElementById("setSizeHeight").value = document.documentElement.clientHeight * 0.7;
-	WindowChange($("#setSizeWidth").attr("value"))
 	runStateChange("未运行");
-}
-
-function WindowChange() {
-	//根据滑条设置基准宽高
-	width = document.getElementById("setSizeWidth").value;
-	height = document.getElementById("setSizeHeight").value;
-	//在滑条显示
-	document.getElementById("setSizeWidthLabel").innerHTML = parseInt(width / 6);
-	document.getElementById("setSizeHeightLabel").innerHTML = parseInt(height / 4.8);
-	//滑条最大值控制（不大于当前窗口大小）
-	if (document.documentElement.clientWidth - 40 > 600)
-		$("#setSizeWidth").attr("max", document.documentElement.clientWidth - 40);
-	else
-		$("#setSizeWidth").attr("max", 600);
-	if (document.documentElement.clientHeight > 480)
-		$("#setSizeHeight").attr("max", document.documentElement.clientHeight);
-	else
-		$("#setSizeHeight").attr("max", 480);
-	//输出窗口尺寸（未启用）
-	var printWindowSizeVar = function() {
-		document.getElementById("printWindowSize").innerHTML = "窗口宽度：" + document.documentElement.clientWidth +
-			"，窗口高度：" + document.documentElement.clientHeight;
-		document.getElementById("printWindowSizeMain").innerHTML = "主体宽度：" + parseInt(width) +
-			"，主体高度：" + parseInt(height);
-	}
-	//标签类（按钮）
-	$(".LabelButton").css({
-		"font-size": height * 0.03 + "px",
-	})
-	//标签类（普通）
-	$(".LabelNormal").css({
-		"font-size": height * 0.02 + "px",
-	})
-	//规则列表类（标签）
-	$(".ruleList").css({
-		"font-size": height * 0.03 + "px",
-	})
-	$(".showTapeCharClass").css({
-		"margin": width * 0.01 + "px",
-		"width": width * 0.05 + "px",
-		"min-width": width * 0.04 + "px",
-		"height": height * 0.06 + "px",
-		"font-size": height * 0.03 + "px",
-		"padding-top": height * 0.005 + "px",
-	})
-	//输入带状态类
-	$(".showTapeStateClass").css({
-		"margin": width * 0.01 + "px",
-		"width": width * 0.05 + "px",
-		"min-width": width * 0.04 + "px",
-		"font-size": height * 0.02 + "px",
-		"height": height * 0.03 + "px",
-	})
-	//按钮类
-	$(".Button").css({
-		"height": height * 0.05 + "px",
-		"width": width * 0.56 - 10 + "px",
-		"line-height": height * 0.05 + "px",
-		"font-size": height * 0.03 + "px",
-	})
-	//参数输入框
-	$("[type=text]").css({
-		"width": width * 0.56 - height * 0.04 - 30 + "px",
-		"height": height * 0.05 + "px",
-		"line-height": height * 0.034 + "px",
-		"font-size": height * 0.03 + "px",
-	})
-
-	//输入带table
-	$("#showTapeTable").css({
-		"margin-top": ($("#showTape").height() - $("#showTapeTable").height()) / 2 - 22 + "px"
-	})
-	//参数框table
-	$("#parameterTable").attr({
-		"cellpadding": (height * 0.01) < 20 ? height * 0.01 : 20 + "px"
-	})
-
-	//参数框
-	$("#parameter").css({
-		"width": width * 0.6 + "px",
-	});
-	//输入带框
-	$("#showTape").css({
-		"width": width + "px",
-		"height": height * 0.2 + "px"
-	});
-	//规则展示框
-	$("#showRule").css({
-		"height": $("#parameterForm").height() + "px",
-		"width": width * 0.4 + "px",
-	})
-
-	//主体
-	$("#main").css({
-		"margin-left": (document.documentElement.clientWidth - $("#mainTable").width()) / 2 + "px"
-	});
-}
-
-function setSizeWidthFun() {
-	WindowChange();
-}
-
-function setSizeHeightFun() {
-	WindowChange();
 }
 
 function runStateChange(newState) {
