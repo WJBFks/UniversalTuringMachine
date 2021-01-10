@@ -2,6 +2,8 @@
 
 [点击浏览通用图灵机](https://wjbfks.github.io/UniversalTuringMachine/Web-UTM.html)
 
+如果页面未更新、报错、样式错乱，请使用Ctrl+F5强制刷新
+
 ### 文件说明
 
 ###### Sourse
