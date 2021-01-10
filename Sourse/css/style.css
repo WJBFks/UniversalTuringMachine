@@ -108,6 +108,7 @@ label {
 #main {
 	margin-left:auto;
 	margin-right:auto;
+	margin-top: 2rem;
 	width: 49.75rem;
 }
 
@@ -151,13 +152,15 @@ footer {
 }
 /*（7）参数框设置*/
 #parameterForm {
+	padding-top: 0;
+	padding-bottom: 0;
 	width: 25rem;
 	position: relative;
 	margin: 0;
 }
 /*（8）规则框设置*/
 #showRule {
-	height: 31.375rem;
+	height: 29.375rem;
 	margin: 0.9375rem 0;
 	width: 18.75rem;
 	border-radius: 0.3125rem;
