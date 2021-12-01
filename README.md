@@ -6,6 +6,10 @@
 
 ### 文件说明
 
+点击选择规则，选择rules文件夹中的其中一个.txt文件，然后在输入纸带中输入字符即可
+
+### 文件说明
+
 ###### Sourse
 
 > 包含UniversalTuringMachine.html网页源代码
